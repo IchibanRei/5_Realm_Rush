@@ -333,10 +333,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8489adc47dc39214dbc1f69bc223437c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 0}
   isExplored: 0
   exploredFrom: {fileID: 0}
   IsPlaceable: 1
+  towerPrefab: {fileID: 114847939568923330, guid: 838df3750d89cab4784b553869940191,
+    type: 2}
 --- !u!114 &114924624665230822
 MonoBehaviour:
   m_ObjectHideFlags: 1
