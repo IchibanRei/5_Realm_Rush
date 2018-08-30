@@ -62,7 +62,7 @@ public class Tower : MonoBehaviour {
         if(distanceToEnemy <= attackRange)
         { 
             Shoot(true);
-        }
+        } //TODO test
         else
         {
             Shoot(false);

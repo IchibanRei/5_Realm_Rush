@@ -13,11 +13,13 @@ public class CubeEditor : MonoBehaviour {
     {
         waypoint = GetComponent<Waypoint>();
     }
+
     void Update ()
     {
         UpdateLabel();
         SnapToGrid();
     }
+
 
     private void SnapToGrid()
     {
@@ -27,8 +29,8 @@ public class CubeEditor : MonoBehaviour {
             0f,
             waypoint.GetGridPos().y * gridSize
             );
-
     }
+
 
     private void UpdateLabel()
     {
@@ -39,10 +41,10 @@ public class CubeEditor : MonoBehaviour {
 
         textMesh.text = labelText;
         gameObject.name = "Cube " + labelText;
-        if(gameObject.tag == "Start" || gameObject.tag == "Finish")
-        {
-            waypoint.SetTopColor(Color.red);
-        }
+        //if(gameObject.tag == "Start" || gameObject.tag == "Finish")
+        //{
+        //    waypoint.SetTopColor(Color.red);
+        //}
         
     }
 }

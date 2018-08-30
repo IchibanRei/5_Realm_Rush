@@ -8,6 +8,9 @@ public class Waypoint : MonoBehaviour {
     // public is OK in a data class
     public bool isExplored = false;
     public Waypoint exploredFrom;
+    public bool IsPlaceable = true;
+
+    [SerializeField] Tower towerPrefab;
 
     Vector2Int gridPos;
 
@@ -24,12 +27,28 @@ public class Waypoint : MonoBehaviour {
             Mathf.RoundToInt(transform.position.x / gridSize),
             Mathf.RoundToInt(transform.position.z / gridSize)
         );
-
     }
 
-    public void SetTopColor(Color color)
+    void OnMouseOver()
     {
-        MeshRenderer topMeshRenderer = transform.Find("Top").GetComponent<MeshRenderer>();
-        topMeshRenderer.material.color = color;
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (IsPlaceable)
+            {
+                print(gameObject.name + " clicked");
+                AddNewTower();
+            }
+            else
+            {
+                print("Not placeable here");
+            }
+        }
+    }
+
+    private void AddNewTower()
+    {
+        Instantiate(towerPrefab, transform.position, Quaternion.identity);
+        IsPlaceable = false;
+        print("Tower Added");
     }
 }
